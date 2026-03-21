@@ -1,9 +1,21 @@
+/* ===== IMPORT FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap');
+
 /* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+}
+
+.brand{
+  font-family:'Playfair Display', serif;
+  font-size:32px;
+  font-weight:600;
+
+  color:#d63384;
+  letter-spacing:1px;
 }
 
 /* ===== BODY ===== */
@@ -65,19 +77,44 @@ button:hover {
 }
 
 /* ===== CARD ===== */
+
 .card {
   background: white;
   padding: 25px;
   border-radius: 20px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
   cursor: pointer;
   text-align: center;
-  transition: 0.3s ease;
+
+  transition: all 0.35s ease;
+
+  position: relative;
+  overflow: hidden;
 }
 
+/* Hover Effect */
+
 .card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transform: translateY(-10px) scale(1.04);
+
+  background: linear-gradient(135deg,#ffe4ec,#f3e8ff);
+
+  box-shadow: 
+  0 12px 30px rgba(0,0,0,0.2),
+  0 0 20px rgba(255,77,136,0.25);
+}
+
+/* Title Hover */
+
+.card:hover h3 {
+  color: #d63384;
+}
+
+/* Text Hover */
+
+.card:hover p {
+  color: #333;
 }
 
 /* ===== RESULT SECTION ===== */
@@ -171,4 +208,14 @@ button:hover {
   h1 {
     font-size: 2.2rem;
   }
+}
+
+body{
+  margin:0;
+  font-family:Poppins, sans-serif;
+}
+
+.page{
+  padding-top:300px;
+  min-height:100vh;
 }

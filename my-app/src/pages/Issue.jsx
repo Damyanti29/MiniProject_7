@@ -2,6 +2,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getIssues } from "../services/api";
 import StepCard from "../components/StepCard";
+import "./Issue.css";
 
 const Issue = () => {
   const { state } = useLocation();

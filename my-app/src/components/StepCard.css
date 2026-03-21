@@ -1,13 +1,33 @@
-.step-card {
-  background: white;
-  padding: 25px;
-  border-radius: 20px;
-  text-align: center;
-  cursor: pointer;
-  transition: 0.3s;
+.step-card{
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  cursor:pointer;
+
+  transition:all 0.35s ease;
+
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
-.step-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+/* Improved Hover */
+
+.step-card:hover{
+  transform:translateY(-10px) scale(1.05);
+
+  background:linear-gradient(135deg,#ffe4ec,#f3e8ff);
+
+  box-shadow:
+  0 12px 30px rgba(0,0,0,0.2),
+  0 0 15px rgba(255,77,136,0.25);
+}
+
+/* Text color on hover */
+
+.step-card:hover h3{
+  color:#d63384;
+}
+
+.step-card:hover p{
+  color:#333;
 }
