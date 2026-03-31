@@ -9,13 +9,13 @@
   font-family: "Poppins", sans-serif;
 }
 
-.brand{
-  font-family:'Playfair Display', serif;
-  font-size:32px;
-  font-weight:600;
+.brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 600;
 
-  color:#d63384;
-  letter-spacing:1px;
+  color: #d63384;
+  letter-spacing: 1px;
 }
 
 /* ===== BODY ===== */
@@ -28,7 +28,8 @@ body {
 /* ===== CONTAINER ===== */
 .container {
   text-align: center;
-  padding: 40px 20px;
+  padding: 120px 20px 40px 20px;
+  /* Top: 120px, Right/Left: 20px, Bottom: 40px */
 }
 
 /* ===== HEADINGS ===== */
@@ -82,7 +83,7 @@ button:hover {
   background: white;
   padding: 25px;
   border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 
   cursor: pointer;
   text-align: center;
@@ -98,11 +99,11 @@ button:hover {
 .card:hover {
   transform: translateY(-10px) scale(1.04);
 
-  background: linear-gradient(135deg,#ffe4ec,#f3e8ff);
+  background: linear-gradient(135deg, #ffe4ec, #f3e8ff);
 
-  box-shadow: 
-  0 12px 30px rgba(0,0,0,0.2),
-  0 0 20px rgba(255,77,136,0.25);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.2),
+    0 0 20px rgba(255, 77, 136, 0.25);
 }
 
 /* Title Hover */
@@ -130,7 +131,7 @@ button:hover {
   padding: 25px;
   border-radius: 20px;
   margin-bottom: 30px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* ===== PRODUCT GRID ===== */
@@ -145,13 +146,13 @@ button:hover {
   background: white;
   border-radius: 20px;
   padding: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: 0.3s;
 }
 
 .product-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 /* ===== PRODUCT IMAGE ===== */
@@ -200,6 +201,7 @@ button:hover {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+
   .grid,
   .product-grid {
     grid-template-columns: 1fr;
@@ -210,12 +212,13 @@ button:hover {
   }
 }
 
-body{
-  margin:0;
-  font-family:Poppins, sans-serif;
+body {
+  margin: 0;
+  font-family: Poppins, sans-serif;
 }
 
-.page{
-  padding-top:300px;
-  min-height:100vh;
+.page {
+  padding-top: 250px;
+  /* Increase this number until it looks right */
+  min-height: 100vh;
 }

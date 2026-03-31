@@ -7,11 +7,13 @@ import Issue from './Pages/Issue';
 import Result from './Pages/Result';
 import Home from './pages/Home';
 import Hero from './pages/Hero';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Profile from './pages/Profile';
+import ProtectedRoute from './components/ProtectedRoute';
 import BackgroundVideo from "./components/BackgroundVideo";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-
-
 function App() {
   return (
     <BrowserRouter>
@@ -22,10 +24,15 @@ function App() {
       <div className="page">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/category" element={<Category />} />
-          <Route path="/type" element={<Type />} />
-          <Route path="/issue" element={<Issue />} />
-          <Route path="/result" element={<Result />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/profile" element={<Profile />} />
+          
+          {/* Protected Area: Advisor System */}
+          <Route path="/category" element={<ProtectedRoute><Category /></ProtectedRoute>} />
+          <Route path="/type" element={<ProtectedRoute><Type /></ProtectedRoute>} />
+          <Route path="/issue" element={<ProtectedRoute><Issue /></ProtectedRoute>} />
+          <Route path="/result" element={<ProtectedRoute><Result /></ProtectedRoute>} />
         </Routes>
       </div>
 

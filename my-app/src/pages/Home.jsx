@@ -1,10 +1,12 @@
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../AuthContext";
 import "./Home.css";
 import videoBg from "../assets/background.mp4";
 
 const Home = () => {
 
   const navigate = useNavigate();
+  const { user } = useAuth();
 
   return (
     <div className="home">
@@ -22,8 +24,8 @@ const Home = () => {
         <h1>Skin & Strand 🌸</h1>
         <p>Personalized Skin & Hair Care Solutions</p>
 
-        <button onClick={() => navigate("/category")}>
-          Get Started
+        <button onClick={() => navigate(user ? "/category" : "/register")}>
+          {user ? "Get Started" : "Register to Start"}
         </button>
 
       </div>

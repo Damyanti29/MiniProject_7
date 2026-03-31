@@ -1,19 +1,26 @@
 import React, { useState } from 'react';
-import './Login.css';
+import './Login.css'; // Reusing the identical premium glassmorphism styles
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
 
-const Login = () => {
+const Register = () => {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { register } = useAuth();
+  const [errorMsg, setErrorMsg] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Dummy Login attempt:', { email });
+    console.log('Dummy Registration attempt:', { name, email });
     
-    login(email); // Our dummy auth system
+    if (!email || !name) {
+      setErrorMsg('Please fill in all details');
+      return;
+    }
+    
+    register(name, email); // Our dummy auth system registers and auto-logs them in
 
     navigate('/profile');
   };
@@ -21,10 +28,28 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="login-card">
-        <h2>Welcome Back ✨</h2>
-        <p>Log in to access your advisor and personalized results</p>
+        <h2>Create Account ✨</h2>
+        <p>Join us to get your personalized skin and hair advisor</p>
+        
+        {errorMsg && (
+          <div className="error-msg" style={{color: '#ff5c8a', marginBottom: '1rem', display: 'flex', flexDirection: 'column', gap: '10px'}}>
+            <span>{errorMsg}</span>
+          </div>
+        )}
         
         <form className="login-form" onSubmit={handleSubmit}>
+          <div className="input-group">
+            <label htmlFor="name">Full Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              placeholder="Sarah Jenkins"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </div>
+
           <div className="input-group">
             <label htmlFor="email">Email Address</label>
             <input 
@@ -49,15 +74,15 @@ const Login = () => {
             />
           </div>
           
-          <button type="submit" className="login-btn">Sign In</button>
+          <button type="submit" className="login-btn">Sign Up</button>
         </form>
         
         <div className="register-link">
-          Don't have an account? <Link to="/register">Sign up</Link>
+          Already have an account? <Link to="/login">Log in</Link>
         </div>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Register;
