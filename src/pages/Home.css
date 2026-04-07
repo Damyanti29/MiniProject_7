@@ -1,0 +1,225 @@
+/* Import modern font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins', sans-serif;
+}
+
+/* Page background */
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background: linear-gradient(135deg,#ff9a9e,#fad0c4,#fad0c4);
+}
+
+/* Main container */
+.container{
+text-align:center;
+padding:60px 50px;
+border-radius:20px;
+background: rgba(255,255,255,0.2);
+backdrop-filter: blur(12px);
+box-shadow:0 10px 40px rgba(0,0,0,0.2);
+animation: fadeIn 1.2s ease;
+}
+
+/* Title */
+.container h1{
+font-size:42px;
+font-weight:600;
+color:#2c2c2c;
+margin-bottom:10px;
+}
+
+/* Subtitle */
+.container p{
+font-size:18px;
+color:#444;
+margin-bottom:35px;
+}
+
+/* Button style */
+.container button{
+padding:14px 40px;
+font-size:16px;
+font-weight:500;
+border:none;
+border-radius:50px;
+cursor:pointer;
+color:white;
+background: linear-gradient(135deg,#ff758c,#ff7eb3);
+transition: all 0.3s ease;
+box-shadow:0 5px 20px rgba(255,118,148,0.4);
+}
+
+/* Button hover */
+.container button:hover{
+transform: translateY(-3px) scale(1.05);
+box-shadow:0 10px 25px rgba(255,118,148,0.6);
+}
+
+/* Button click */
+.container button:active{
+transform: scale(0.95);
+}
+
+/* Entry animation */
+@keyframes fadeIn{
+from{
+opacity:0;
+transform: translateY(40px);
+}
+to{
+opacity:1;
+transform: translateY(0);
+}
+}
+
+.home{
+  position:relative;
+  width:100%;
+}
+
+/* Video Background */
+
+.video-bg{
+  position:fixed;
+  right:0;
+  bottom:0;
+  min-width:100%;
+  min-height:100%;
+  object-fit:cover;
+  z-index:-2;
+}
+
+.overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+  z-index:-1;
+}
+
+/* Hero Container */
+
+.hero-container{
+  height:100vh;
+  display:flex;
+  padding-top:250px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  text-align:center;
+}
+
+.hero-container p{
+  font-size:20px;
+  margin-bottom:25px;
+  font-weight:700;
+  background:linear-gradient(45deg,#ff7eb3,#ff4f81);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero-container button{
+  padding:14px 40px;
+  font-size:16px;
+  border:none;
+  border-radius:30px;
+  background:#ff5c8a;
+  color:white;
+  cursor:pointer;
+}
+
+.hero-container button:hover{
+  background:#ff2f6d;
+}
+
+/* Why Choose Us Section */
+
+.why{
+  background:rgb(212, 113, 162);
+  padding:80px 40px;
+  text-align:center;
+}
+
+.why h2{
+  font-size:36px;
+  margin-bottom:40px;
+}
+
+.why-cards{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+}
+
+.card{
+  background:#fff0f5;
+  padding:30px;
+  border-radius:15px;
+  width:250px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+  color:black;                /* text color */
+  transition:all 0.3s ease;
+}
+
+.why{
+  padding:80px 40px;
+  background:white;
+  text-align:center;
+}
+
+.why h2{
+  font-size:36px;
+  margin-bottom:40px;
+}
+
+.why-cards{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+}
+
+.why-card{
+  background:#fff0f5;
+  padding:30px;
+  border-radius:15px;
+  width:250px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+.card h3{
+  color:black;
+  margin-bottom:10px;
+}
+
+.card p{
+  color:#333;
+}
+
+/* Hover effect */
+
+.card:hover{
+  transform:translateY(-8px) scale(1.03);
+  background:#ff5c8a;
+  color:black; 
+  box-shadow:0 10px 30px rgba(255,105,150,0.3);               /* keep text black */
+}
+
+.card:hover h3{
+  color:black;
+}
+
+.card:hover p{
+  color:#333;
+}

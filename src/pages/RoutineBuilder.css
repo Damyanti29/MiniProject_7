@@ -1,0 +1,364 @@
+.routine-builder-page {
+  padding: 370px 20px 80px;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Phase 1: Questionnaire */
+.questionnaire-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.questionnaire-card h2 {
+  font-size: 2.2rem;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.questionnaire-card p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.form-group {
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: #ff9a9e;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.choice-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid transparent;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.choice-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.choice-card.selected {
+  border-color: #ff9a9e;
+  background: rgba(255, 154, 158, 0.2);
+  box-shadow: 0 4px 15px rgba(255, 154, 158, 0.3);
+}
+
+.generate-magic-btn {
+  background: linear-gradient(135deg, #a855f7, #ff5c8a);
+  color: white;
+  font-family: 'Outfit', sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 15px;
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.generate-magic-btn:disabled {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.3);
+  cursor: not-allowed;
+}
+
+.generate-magic-btn:not(:disabled):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 92, 138, 0.4);
+}
+
+/* Phase 2: The Timeline Routine */
+.routine-display {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.routine-main-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.routine-subtitle {
+  text-align: center;
+  color: #ff9a9e;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.timelines-wrapper {
+  display: flex;
+  gap: 40px;
+}
+
+.timeline-column {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.timeline-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.1);
+}
+
+.am-header h3 {
+  color: #fbd786;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.am-header p {
+  color: rgba(255, 255, 255, 0.6);
+  margin: 5px 0 0 0;
+}
+
+.pm-header h3 {
+  color: #a8c0ff;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.pm-header p {
+  color: rgba(255, 255, 255, 0.6);
+  margin: 5px 0 0 0;
+}
+
+/* The actual timeline line and dots */
+.timeline-path {
+  position: relative;
+}
+
+.timeline-path::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20px;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+}
+
+.timeline-step {
+  position: relative;
+  margin-bottom: 30px;
+  padding-left: 50px;
+}
+
+.step-point {
+  position: absolute;
+  left: 14px;
+  top: 15px;
+  width: 14px;
+  height: 14px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  /* Down arrowhead trick */
+}
+
+/* Arrow indicator beneath the point (except last step) */
+.timeline-step:not(:last-child)::after {
+  content: '↓';
+  position: absolute;
+  left: 13px;
+  top: 45px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 1.2rem;
+  font-family: monospace;
+}
+
+.glass-step {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px 20px;
+  border-radius: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  transition: transform 0.3s ease;
+}
+
+.glass-step:hover {
+  transform: translateX(5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.step-icon {
+  font-size: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.step-text {
+  flex: 1;
+}
+
+.step-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 3px 8px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.remedy-badge {
+  background: linear-gradient(135deg, #11998e, #38ef7d);
+  font-weight: bold;
+}
+
+.step-text h4 {
+  color: white;
+  margin: 0 0 5px 0;
+  font-size: 1.2rem;
+}
+
+.step-text p {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Actions */
+.bottom-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.back-btn {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-family: 'Outfit';
+  cursor: pointer;
+}
+
+.finish-btn {
+  background: white;
+  color: black;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-family: 'Outfit';
+  cursor: pointer;
+}
+
+/* Animations */
+.slide-up {
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Cartoon Remedy Animation */
+.cartoon-bounce {
+  animation: cartoonBounce 1.5s infinite;
+  display: inline-block;
+  transform-origin: bottom center;
+}
+
+@keyframes cartoonBounce {
+  0%, 100% { transform: scale(1, 1) translateY(0); }
+  10% { transform: scale(1.2, 0.8) translateY(5px); }
+  30% { transform: scale(0.9, 1.1) translateY(-15px); }
+  50% { transform: scale(1.05, 0.95) translateY(0); }
+  60% { transform: scale(1, 1) translateY(-5px); }
+  70% { transform: scale(1, 1) translateY(0); }
+}
+
+.remedy-anim-card {
+  border: 2px solid #38ef7d !important;
+  animation: magicPulse 2s infinite alternate ease-in-out;
+  background: rgba(56, 239, 125, 0.1) !important;
+}
+
+@keyframes magicPulse {
+  0% { box-shadow: 0 0 10px rgba(56, 239, 125, 0.2); transform: scale(1); }
+  100% { box-shadow: 0 0 25px rgba(56, 239, 125, 0.6); transform: scale(1.03); }
+}
+
+/* Responsive constraints */
+@media (max-width: 768px) {
+  .timelines-wrapper {
+    flex-direction: column;
+  }
+}

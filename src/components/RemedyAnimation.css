@@ -1,0 +1,149 @@
+.remedy-animation-container {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, rgba(255, 92, 138, 0.05), rgba(168, 85, 247, 0.05));
+    border-radius: 16px;
+    border: 2px dashed rgba(168, 85, 247, 0.3);
+  }
+  
+  .animation-stage {
+    position: relative;
+    width: 200px;
+    height: 180px;
+    margin-top: 20px;
+  }
+  
+  .the-bowl {
+    font-size: 6rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    animation: bowlReveal 6s infinite cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  }
+  
+  /* Ingredients */
+  .ingredient {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    opacity: 0;
+    z-index: 1; /* Drop BEHIND the front lip of the bowl */
+  }
+  
+  .ing-icon {
+    font-size: 2.2rem;
+  }
+  
+  .ing-label {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #a855f7;
+    background: white;
+    padding: 3px 8px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-top: -5px;
+    white-space: nowrap;
+  }
+  
+  .drop-1 {
+    animation: dropIn 6s infinite;
+    animation-delay: 0.8s;
+    margin-left: -40px;
+  }
+  
+  .drop-2 {
+    animation: dropIn 6s infinite;
+    animation-delay: 1.5s;
+    margin-left: 20px;
+  }
+  
+  .drop-3 {
+    animation: dropIn 6s infinite;
+    animation-delay: 2.2s;
+    margin-left: -5px;
+  }
+  
+  .mixing-spoon {
+    font-size: 4rem;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    margin-left: -40px;
+    opacity: 0;
+    z-index: 3; /* Spoon in front of everything to stir */
+    transform-origin: bottom 20%;
+    animation: mixStir 6s infinite;
+  }
+  
+  /* The Final Paste Pop Out */
+  .magic-paste {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    z-index: 4;
+    transform: translateX(-50%) scale(0);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: magicExplosion 6s infinite;
+  }
+  
+  .paste-icons {
+    font-size: 4rem;
+    line-height: 1;
+  }
+  
+  .paste-label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: #ff5c8a;
+    padding: 5px 12px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(255, 92, 138, 0.4);
+    margin-top: -5px;
+    white-space: nowrap;
+  }
+  
+  /* KEYFRAMES (Extended to 6 seconds for better pacing) */
+  @keyframes bowlReveal {
+    0%, 10% { bottom: -100px; opacity: 0; }
+    15%, 85% { bottom: 0; opacity: 1; transform: translateX(-50%) scale(1); filter: drop-shadow(0 0 0px transparent); }
+    88%, 100% { bottom: 0; opacity: 1; transform: translateX(-50%) scale(1.05); filter: drop-shadow(0 0 20px #38ef7d); }
+  }
+  
+  @keyframes dropIn {
+    0% { top: -40px; opacity: 0; transform: scale(1) rotate(0deg); }
+    5% { opacity: 1; }
+    25% { top: 70px; opacity: 0; transform: scale(0.3) rotate(30deg); } /* Stops inside the bowl */
+    100% { top: 70px; opacity: 0; }
+  }
+  
+  @keyframes mixStir {
+    0%, 45% { opacity: 0; transform: translate(30px, -40px) rotate(45deg); }
+    48% { opacity: 1; transform: translate(15px, 0px) rotate(15deg); }
+    55% { opacity: 1; transform: translate(-15px, 10px) rotate(-30deg); }
+    65% { opacity: 1; transform: translate(25px, 0px) rotate(25deg); }
+    75% { opacity: 0; transform: translate(30px, -40px) rotate(45deg); }
+    100% { opacity: 0; }
+  }
+  
+  @keyframes magicExplosion {
+    0%, 80% { opacity: 0; transform: translateX(-50%) scale(0.2) rotate(-20deg); }
+    85% { opacity: 1; transform: translateX(-50%) scale(1.1) rotate(5deg); filter: drop-shadow(0 0 30px rgba(255, 235, 59, 1)); }
+    95%, 100% { opacity: 0; transform: translateX(-50%) scale(1.5) rotate(15deg); }
+  }
