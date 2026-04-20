@@ -1,0 +1,12 @@
+Issue 'Pigmentation' has solutions for Types: Oily, Combination, Acne-Prone, Dry, Sensitive
+Issue 'Sun Damage' has solutions for Types: Oily, Combination, Acne-Prone, Dry, Sensitive
+Issue 'Barrier Damage' has solutions for Types: Oily, Combination, Acne-Prone, Sensitive, Dry
+Issue 'Open Pores' has solutions for Types: Oily, Acne-Prone, Combination, Dry, Sensitive
+Issue 'Early Aging' has solutions for Types: Oily, Combination, Mature, Acne-Prone, Dry, Sensitive
+Issue 'Acne' has solutions for Types: Combination, Acne-Prone, Oily, Dry, Sensitive
+Issue 'Dandruff' has solutions for Types: Normal, Dry/Damaged, Curly/Coily, Oily Scalp, Thin/Fine, Mature, Dry, Mixed (Oily Scalp/Dry Ends), Damaged
+Issue 'Hair Fall' has solutions for Types: Normal, Dry/Damaged, Curly/Coily, Oily Scalp, Thin/Fine, Mature, Dry, Mixed (Oily Scalp/Dry Ends), Damaged
+Issue 'Itchy Scalp' has solutions for Types: Normal, Dry/Damaged, Curly/Coily, Oily Scalp, Thin/Fine, Mature, Mixed (Oily Scalp/Dry Ends), Dry, Damaged
+Issue 'Frizz Control' has solutions for Types: Normal, Dry/Damaged, Curly/Coily, Oily Scalp, Thin/Fine, Dry, Mixed (Oily Scalp/Dry Ends), Damaged, Mature
+Issue 'Premature Greying' has solutions for Types: Dry/Damaged, Curly/Coily, Oily Scalp, Thin/Fine, Normal, Dry, Mixed (Oily Scalp/Dry Ends), Damaged, Mature
+Issue 'null' has solutions for Types: Thin/Fine

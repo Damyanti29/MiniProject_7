@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: flex-start;
   font-family: 'Outfit', sans-serif;
+  margin-top: 1000px;
 }
 
 /* Phase 1: Questionnaire */
@@ -116,13 +117,14 @@
 
 .routine-subtitle {
   text-align: center;
-  color: #ff9a9e;
+  color: #fbfbfb;
   font-size: 1.1rem;
   margin-bottom: 40px;
 }
 
 .timelines-wrapper {
   display: flex;
+  margin-top: 30px;
   gap: 40px;
 }
 
@@ -337,12 +339,31 @@
 }
 
 @keyframes cartoonBounce {
-  0%, 100% { transform: scale(1, 1) translateY(0); }
-  10% { transform: scale(1.2, 0.8) translateY(5px); }
-  30% { transform: scale(0.9, 1.1) translateY(-15px); }
-  50% { transform: scale(1.05, 0.95) translateY(0); }
-  60% { transform: scale(1, 1) translateY(-5px); }
-  70% { transform: scale(1, 1) translateY(0); }
+
+  0%,
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+
+  10% {
+    transform: scale(1.2, 0.8) translateY(5px);
+  }
+
+  30% {
+    transform: scale(0.9, 1.1) translateY(-15px);
+  }
+
+  50% {
+    transform: scale(1.05, 0.95) translateY(0);
+  }
+
+  60% {
+    transform: scale(1, 1) translateY(-5px);
+  }
+
+  70% {
+    transform: scale(1, 1) translateY(0);
+  }
 }
 
 .remedy-anim-card {
@@ -352,8 +373,15 @@
 }
 
 @keyframes magicPulse {
-  0% { box-shadow: 0 0 10px rgba(56, 239, 125, 0.2); transform: scale(1); }
-  100% { box-shadow: 0 0 25px rgba(56, 239, 125, 0.6); transform: scale(1.03); }
+  0% {
+    box-shadow: 0 0 10px rgba(56, 239, 125, 0.2);
+    transform: scale(1);
+  }
+
+  100% {
+    box-shadow: 0 0 25px rgba(56, 239, 125, 0.6);
+    transform: scale(1.03);
+  }
 }
 
 /* Responsive constraints */

@@ -1,0 +1,115 @@
+.face-analyzer-wrapper {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: white;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.analyzer-header h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.analyzer-header p {
+  color: #cccccc;
+  margin-bottom: 1.5rem;
+}
+
+.loading-models {
+  color: #09f1b8;
+  font-weight: bold;
+  animation: pulse 1.5s infinite;
+}
+
+.upload-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #09f1b8, #00a2ff);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.upload-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.upload-btn input[type="file"] {
+  display: none;
+}
+
+.image-container {
+  position: relative;
+  margin: 2rem auto;
+  max-width: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.face-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.scanning-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #09f1b8;
+  box-shadow: 0 0 10px #09f1b8, 0 0 20px #09f1b8;
+  z-index: 3;
+  animation: scan 2s linear infinite;
+  pointer-events: none;
+}
+
+.scan-result {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #09f1b8;
+  text-shadow: 0 0 10px rgba(9, 241, 184, 0.5);
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes scan {
+  0% { top: 0; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

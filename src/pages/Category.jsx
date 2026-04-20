@@ -8,7 +8,7 @@ const Category = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    getCategories().then(({ data }) => setCategories(data));
+    getCategories().then(({ data }) => setCategories(data || []));
   }, []);
 
   return (

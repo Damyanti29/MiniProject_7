@@ -10,7 +10,7 @@ const Issue = () => {
   const [issues, setIssues] = useState([]);
 
   useEffect(() => {
-    getIssues(state.category.id).then(({ data }) => setIssues(data));
+    getIssues(state.category.id).then(({ data }) => setIssues(data || []));
   }, []);
 
   return (

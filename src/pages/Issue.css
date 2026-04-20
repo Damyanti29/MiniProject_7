@@ -18,3 +18,26 @@
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:25px;
 }
+
+.or-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 40px 0;
+  color: #fff;
+}
+
+.or-divider::before,
+.or-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.or-divider h2 {
+  font-size: 1.5rem;
+  margin: 0 20px;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
