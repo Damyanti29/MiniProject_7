@@ -15,13 +15,16 @@ import BackgroundVideo from "./components/BackgroundVideo";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import RoutineBuilder from "./pages/RoutineBuilder";
+
 function App() {
   return (
     <BrowserRouter>
 
+      
       <BackgroundVideo />
       <Navbar />
 
+     
       <div className="page">
         <Routes>
           <Route path="/" element={<Home />} />

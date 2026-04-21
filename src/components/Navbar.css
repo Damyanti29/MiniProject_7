@@ -16,7 +16,8 @@
 
   color:white;
 
-  z-index:1000;   /* VERY IMPORTANT */
+  z-index:1000;
+  margin-bottom: 500px;   /* VERY IMPORTANT */
 }
 
 .logo{

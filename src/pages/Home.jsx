@@ -52,6 +52,12 @@ const Home = () => {
             <p>Advice tailored to your unique beauty needs.</p>
           </div>
 
+
+        </div>
+        
+<div className="why-disclaimer">
+          Disclaimer: This app provides general skincare and haircare advice.
+          Please consult a professional for medical concerns.
         </div>
 
       </section>
